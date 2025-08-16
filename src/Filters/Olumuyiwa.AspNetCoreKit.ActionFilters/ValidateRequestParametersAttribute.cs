@@ -9,16 +9,19 @@ namespace Olumuyiwa.AspNetCoreKit.ActionFilters
     /// <summary>
     /// An action filter attribute that validates the parameters of an action method using FluentValidation.
     /// </summary>
-    /// <remarks>This attribute checks each action parameter for null values and validates them using the
-    /// appropriate <see cref="IValidator{T}"/> implementation registered in the dependency injection container. If
-    /// validation fails, the request is short-circuited, and a <see cref="BadRequestObjectResult"/> is returned with
-    /// detailed validation error information.</remarks>
+    /// <remarks>
+    /// This attribute validates each action argument them using the appropriate <see cref="IValidator{T}"/>
+    /// implementation registered in the dependency injection container. If an action argument is null or its validation 
+    /// fails, the request is short-circuited, and a <see cref="BadRequestObjectResult"/> is returned with detailed 
+    /// validation error information.
+    /// 
+    /// The validation errors are returned in a structured format, where each property name is associated with an array of 
+    /// error messages. This allows clients to easily understand which parameters failed validation and why.
+    /// </remarks>
     public class ValidateRequestParametersAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            var serviceProvider = context.HttpContext.RequestServices;
-
             foreach (var argument in context.ActionArguments.Values)
             {
                 if (argument == null)
@@ -29,7 +32,7 @@ namespace Olumuyiwa.AspNetCoreKit.ActionFilters
 
                 var validatorType = typeof(IValidator<>).MakeGenericType(argument.GetType());
 
-                if (serviceProvider.GetService(validatorType) is IValidator validator)
+                if (context.HttpContext.RequestServices.GetService(validatorType) is IValidator validator)
                 {
                     ValidationResult validationResult = validator.Validate(new ValidationContext<object>(argument));
 
