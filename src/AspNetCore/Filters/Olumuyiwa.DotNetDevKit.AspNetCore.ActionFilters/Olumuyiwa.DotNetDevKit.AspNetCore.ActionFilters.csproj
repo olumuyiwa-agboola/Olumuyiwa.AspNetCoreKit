@@ -4,6 +4,26 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<TargetFramework>net8.0</TargetFramework>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<Version>1.0.0</Version>
+		<FileVersion>1.0.0.0</FileVersion>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+
+		<NuGetAuditMode>all</NuGetAuditMode>
+
+		<Authors>Olumuyiwa Agboola</Authors>
+		<Copyright>Copyright 2025</Copyright>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Product>Olumuyiwa Agboola's .Net Dev Kit</Product>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<Title>ASP.NET Core Action Filters (from Olumuyiwa Agboola's .Net Dev Kit)</Title>
+		<RepositoryUrl>https://github.com/olumuyiwa-agboola/Olumuyiwa.DotNetDevKit</RepositoryUrl>
+		<PackageTags>dotnetcore; aspnetcore; filters; action-filters; model-validation;</PackageTags>
+		<PackageProjectUrl>https://github.com/olumuyiwa-agboola/Olumuyiwa.DotNetDevKit</PackageProjectUrl>
+		<Description>Reusable action filters that provide common functionality for some of or all the action methods in an ASP.NET Core application.</Description>
+		<SignAssembly>False</SignAssembly>
+		<PackageIcon>tool-box-icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -11,12 +31,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="FluentValidation" Version="12.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Docs\" />
+		<Folder Include="Docs\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\..\..\..\..\..\..\Downloads\tool-box-icon.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\..\..\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 </Project>
