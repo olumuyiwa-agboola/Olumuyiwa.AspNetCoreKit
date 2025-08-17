@@ -1,0 +1,50 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Olumuyiwa.DotNetDevKit.AspNetCore.ActionFilters
+
+on:
+  push:
+    branches: [ "sandbox" ]
+  pull_request:
+    branches: [ "sandbox" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+        
+    - name: Install dependencies
+      run: dotnet restore ./src/AspNetCore/Filters/Olumuyiwa.DotNetKit.AspNetCore.ActionFilters
+      
+    - name: Build
+      run: dotnet build ./src/AspNetCore/Filters/Olumuyiwa.DotNetKit.AspNetCore.ActionFilters -c Release --no-restore
+
+    - name: Setup .NET Core @ Latest
+      uses: actions/setup-dotnet@v4
+      with:
+        source-url: https://nuget.pkg.github.com/olumuyiwa-agboola/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.nuget_api_key}}
+        
+    - name: Generate NuGet package
+      run: |
+        dotnet pack ./src/AspNetCore/Filters/Olumuyiwa.DotNetKit.AspNetCore.ActionFilters -c Release -o out
+        echo 'ls -lar'
+        ls -lar
+        echo 'cd out'
+        cd out
+        echo 'ls -lar'
+        ls -lar
+
+    - name: Push generated package to GitHub registry
+      run: dotnet nuget push "out/*.nupkg" --skip-duplicate --no-symbols true --api-key ${{secrets.nuget_api_key}}
+    
