@@ -19,8 +19,9 @@ namespace Olumuyiwa.DotNetDevKit.AspNetCore.ActionFilters
     /// or the validation of its fields fails, the request is short-circuited, and a 
     /// <see cref="BadRequestObjectResult"/> is returned with detailed validation error information.
     /// 
-    /// The validation errors are returned in a structured format, where each property name is associated with
-    /// an array of error messages. This allows clients to easily understand which parameters failed validation and why.
+    /// The validation errors are returned in a structured format, where each property name is associated
+    /// with an array of error messages. This allows clients to easily understand which parameters failed
+    /// validation and why.
     /// </remarks>
     public class ValidateRequestParametersAttribute : ActionFilterAttribute
     {

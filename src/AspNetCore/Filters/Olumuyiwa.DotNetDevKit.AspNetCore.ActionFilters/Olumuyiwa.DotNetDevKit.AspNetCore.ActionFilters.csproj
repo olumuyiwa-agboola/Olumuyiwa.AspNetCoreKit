@@ -10,9 +10,9 @@
 		<FileVersion>1.0.0.2</FileVersion>
 		<AssemblyVersion>1.0.0.2</AssemblyVersion>
 
-		<NuGetAuditMode>all</NuGetAuditMode>
 		<SignAssembly>False</SignAssembly>
 		<PackageIcon>icon.png</PackageIcon>
+		<NuGetAuditMode>all</NuGetAuditMode>
 		
 		<Authors>Olumuyiwa Agboola</Authors>
 		<Copyright>Copyright 2025</Copyright>
