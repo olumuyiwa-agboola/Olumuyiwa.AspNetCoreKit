@@ -46,5 +46,5 @@ jobs:
         ls -lar
 
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push "out/*.nupkg" --no-symbols true --api-key ${{env.NUGET_AUTH_TOKEN}}
+      run: dotnet nuget push "out/*.nupkg" --no-symbols true --api-key ${{ env.NUGET_AUTH_TOKEN }}
     
