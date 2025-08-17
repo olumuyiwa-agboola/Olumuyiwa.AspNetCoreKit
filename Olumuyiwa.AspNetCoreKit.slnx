@@ -1,6 +1,0 @@
-<Solution>
-  <Folder Name="/src/" />
-  <Folder Name="/src/Filters/">
-    <Project Path="src/Filters/Olumuyiwa.AspNetCoreKit.ActionFilters/Olumuyiwa.AspNetCoreKit.ActionFilters.csproj" />
-  </Folder>
-</Solution>
