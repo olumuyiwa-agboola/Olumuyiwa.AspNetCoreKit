@@ -11,7 +11,9 @@
 		<AssemblyVersion>1.0.0.2</AssemblyVersion>
 
 		<NuGetAuditMode>all</NuGetAuditMode>
-
+		<SignAssembly>False</SignAssembly>
+		<PackageIcon>icon.png</PackageIcon>
+		
 		<Authors>Olumuyiwa Agboola</Authors>
 		<Copyright>Copyright 2025</Copyright>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -22,8 +24,6 @@
 		<PackageTags>dotnetcore; aspnetcore; filters; action-filters; model-validation;</PackageTags>
 		<PackageProjectUrl>https://github.com/olumuyiwa-agboola/Olumuyiwa.DotNetDevKit</PackageProjectUrl>
 		<Description>Reusable action filters that provide common functionality for some of or all the action methods in an ASP.NET Core application.</Description>
-		<SignAssembly>False</SignAssembly>
-		<PackageIcon>tool-box-icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
