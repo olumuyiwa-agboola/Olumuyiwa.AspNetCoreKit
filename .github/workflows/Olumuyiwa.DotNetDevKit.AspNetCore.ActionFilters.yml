@@ -33,7 +33,7 @@ jobs:
       with:
         source-url: https://nuget.pkg.github.com/olumuyiwa-agboola/index.json
       env:
-        NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
+        NUGET_AUTH_TOKEN: ${{ secrets.NUGET_API_KEY }}
         
     - name: Generate NuGet package
       run: |
@@ -46,5 +46,5 @@ jobs:
         ls -lar
 
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push "out/*.nupkg" --skip-duplicate --no-symbols true --api-key ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push "out/*.nupkg" --no-symbols true --api-key ${{env.NUGET_AUTH_TOKEN}}
     
