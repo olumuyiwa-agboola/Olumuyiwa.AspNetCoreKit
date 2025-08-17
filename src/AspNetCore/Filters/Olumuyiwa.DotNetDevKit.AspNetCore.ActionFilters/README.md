@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit)
 [![Language](https://img.shields.io/badge/Language-C%23-blue.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![Frameworks](https://img.shields.io/badge/Frameworks-.NET_8.0+,_ASP.NET_Core_8.0+_-green.svg)](https://dotnet.microsoft.com/download/dotnet-core)
+[![CI](https://github.com/olumuyiwa-agboola/Olumuyiwa.DotNetDevKit/actions/workflows/Olumuyiwa.DotNetDevKit.AspNetCore.ActionFilters.yml/badge.svg)](https://github.com/olumuyiwa-agboola/Olumuyiwa.DotNetDevKit/actions/workflows/Olumuyiwa.DotNetDevKit.AspNetCore.ActionFilters.yml)
 
 A collection of reusable [action filters](https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/filters) that I have implemented and used in 
 several ASP.NET Core applications, providing common functionality for some of or all the action methods in each application.
