@@ -36,9 +36,6 @@ jobs:
         echo 'Contents of out directory:'
         ls -la out/
         
-    - name: Push generated package to GitHub registry
-      run: dotnet nuget push "out/*.nupkg" --source "https://nuget.pkg.github.com/olumuyiwa-agboola/index.json" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
-      
     - name: Push generated package to NuGet
-      run: dotnet nuget push "out/*.nupkg" --source "https://nuget.pkg.github.com/olumuyiwa-agboola/index.json" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+      run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
     
